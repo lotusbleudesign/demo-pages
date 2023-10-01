@@ -7,11 +7,8 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
-          <br />
-          Reload
+          How to deploy a React App with git Actions and Github Pages
         </p>
-
         <a
           className="App-link"
           href="https://reactjs.org"
