@@ -3,7 +3,36 @@ permissions:
   contents: write
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code 🛎️
+        uses: actions/checkout@v3
+      - name: Install Node v18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install
+        run: npm ci
+      - name: Test
+        run: npm run test
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code 🛎️
+        uses: actions/checkout@v3
+      - name: Install Node v18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install
+        run: npm ci
+      - name: Build 🔧
+        run: npm run build
   deploy:
     runs-on: ubuntu-latest
     steps:
@@ -22,5 +51,3 @@ jobs:
         with:
           folder: build # The folder the action should deploy.
           branch: gh-pages # branch avec ce nom mandatory
-        # env:
-        #   ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
