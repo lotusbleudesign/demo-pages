@@ -20,20 +20,8 @@ jobs:
         run: npm ci
       - name: Test
         run: npm run test
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code 🛎️
-        uses: actions/checkout@v3
-      - name: Install Node v18
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - name: Install
-        run: npm ci
-      - name: Build 🔧
-        run: npm run build
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code 🛎️
