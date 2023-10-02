@@ -16,4 +16,4 @@ jobs:
           echo "Hi you"
           echo $MA_VAR
           echo $DB_PASSWORD
-          echo ici -> $ACCESS_TOKEN
+          echo $ACCESS_TOKEN
