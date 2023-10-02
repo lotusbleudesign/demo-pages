@@ -15,4 +15,5 @@ jobs:
         run: |
           echo "Hi you"
           echo $MA_VAR
-          echo $ACCESS_TOKEN
+          echo $DB_PASSWORD
+          echo ici -> $ACCESS_TOKEN
