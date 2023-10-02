@@ -9,11 +9,9 @@ jobs:
       - name: Print result
         env:
           MA_VAR: Ma variable
-          DB_PASSWORD: 123456789
           ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
         shell: bash
         run: |
           echo "Hi you"
           echo $MA_VAR
-          echo $DB_PASSWORD
           echo $ACCESS_TOKEN
