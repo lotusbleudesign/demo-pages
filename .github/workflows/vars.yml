@@ -1,0 +1,18 @@
+name: Vars React App
+on:
+  workflow_dispatch:
+jobs:
+  vars:
+    name: echo Vars
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print result
+        env:
+          MA_VAR: Ma variable
+          DB_PASSWORD: 123456789
+          ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
+        shell: bash
+        run: |
+          echo "Hi you"
+          echo $MA_VAR
+          echo $ACCESS_TOKEN
